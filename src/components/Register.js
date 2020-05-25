@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //styled components
 import Layout from "../components/layout";
@@ -10,7 +11,8 @@ import {
   StyledInput,
   StyledButton,
   StyledError,
-} from "../styles/registerStyles";
+  BottomPart,
+} from "../styles/formStyles";
 
 import firebase from "../firebase";
 
@@ -181,6 +183,10 @@ class Register extends React.Component {
                 <StyledError>{this.displayErrors(errors)}</StyledError>
               )}
               <StyledButton type="submit">Submit!</StyledButton>
+              <BottomPart>
+                <span>Already a user?</span>
+                <Link to="/login"> Login</Link>
+              </BottomPart>
             </StyledForm>
           </StyledFormWrapper>
         </Container>
